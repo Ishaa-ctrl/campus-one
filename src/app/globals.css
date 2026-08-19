@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', 'Poppins', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-campus-bg text-campus-text;
+  }
+
+  * {
+    @apply border-campus-border;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-card shadow-card transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-card-hover hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply bg-campus-purple text-white font-medium px-6 py-2.5 rounded-xl
+           hover:bg-campus-purple-accent transition-all duration-200
+           shadow-button hover:shadow-lg active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply bg-campus-purple-light text-campus-purple font-medium px-6 py-2.5 rounded-xl
+           hover:bg-campus-purple/10 transition-all duration-200
+           active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply border-2 border-campus-border text-campus-text font-medium px-6 py-2.5 rounded-xl
+           hover:border-campus-purple hover:text-campus-purple transition-all duration-200
+           active:scale-[0.98];
+  }
+
+  .btn-danger {
+    @apply bg-campus-danger text-white font-medium px-6 py-2.5 rounded-xl
+           hover:bg-red-600 transition-all duration-200
+           active:scale-[0.98];
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-campus-border bg-white
+           text-campus-text placeholder:text-campus-text-secondary/60
+           focus:outline-none focus:ring-2 focus:ring-campus-purple/30 focus:border-campus-purple
+           transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-campus-text mb-1.5;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-purple {
+    @apply badge bg-campus-purple-light text-campus-purple;
+  }
+
+  .badge-success {
+    @apply badge bg-emerald-50 text-campus-success;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-50 text-campus-danger;
+  }
+
+  .badge-gray {
+    @apply badge bg-gray-100 text-campus-text-secondary;
+  }
+
+  .section-title {
+    @apply text-xl font-bold text-campus-text;
+  }
+
+  .skeleton {
+    @apply bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-shimmer rounded-lg;
+  }
+
+  /* Scrollbar styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-campus-border rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-campus-text-secondary;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-campus-purple to-campus-purple-accent;
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-lg;
+  }
+}
